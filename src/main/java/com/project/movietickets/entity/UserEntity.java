@@ -6,8 +6,9 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
-
-@Entity(name = "users")
+@Data
+@Table(name = "users")
+@Entity
 @Setter
 @Getter
 @NoArgsConstructor
@@ -49,4 +50,5 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<TicketEntity> tickets;
+    
 }

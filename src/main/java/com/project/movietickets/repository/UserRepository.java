@@ -12,4 +12,5 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {
     Optional<UserEntity> findUserEntityByUsername(String username);
     List<UserEntity> findAllByRoleEquals(Role role);
+	void save(Optional<UserEntity> account);
 }
